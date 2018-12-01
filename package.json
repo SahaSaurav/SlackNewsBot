@@ -1,0 +1,22 @@
+{
+  "name": "slacknewsbot",
+  "version": "1.0.0",
+  "description": "a chatbot to deliver daily news to slack ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SahaSaurav/SlackNewsBot.git"
+  },
+  "author": "Ahmed Abdelmoneim, Saurav Saha, Seif Ghazi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SahaSaurav/SlackNewsBot/issues"
+  },
+  "homepage": "https://github.com/SahaSaurav/SlackNewsBot#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
