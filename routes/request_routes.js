@@ -3,7 +3,7 @@ const router      = express.Router();
 
 // Fetch Data
 router.get('/news', (req, res) => {
-  // API REQUEST
+  // API Request to CNN
 })
 
 // Post to Slack
