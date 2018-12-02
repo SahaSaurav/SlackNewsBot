@@ -1,5 +1,4 @@
 require('dotenv').config()
-const fetchNews = require('../services/request_service');
 
 function objectMapper(body) {
   var articles = body.articles;
