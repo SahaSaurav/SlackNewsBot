@@ -50,8 +50,7 @@ function objectMapper(body) {
             "title": element.title,
             "title_link": element.url,
             "text": element.description,
-            "thumb_url": element.urlToImage,
-            "ts": 123456789
+            "thumb_url": element.urlToImage
         };
 
         attachments.push(attachment);
