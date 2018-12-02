@@ -1,16 +1,15 @@
 require('dotenv').config()
-const express = require('express');
 const request = require('request');
-require('dotenv').config()
-const apiKey = process.env.NEWS_API_KEY;
 
+const apiKey = process.env.NEWS_API_KEY;
+const apiURL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey;
 
 // Fetch Data
 function fetchNews() {
   return new Promise((resolve, reject) => {
-    request("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey, {
-        json: true
-      },
+    request(apiURL, {
+      json: true
+    },
       (err, res, body) => {
         if (!err && res.statusCode == 200) {
           resolve(body);
@@ -19,7 +18,7 @@ function fetchNews() {
           throw new Error(err);
         }
       })
-})
+  })
 }
 
-module.exports = {fetchNews};
+module.exports = { fetchNews };
