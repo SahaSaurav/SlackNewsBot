@@ -42,13 +42,13 @@ web.chat.postMessage({
   .catch(console.error);
 
 
-<<<<<<< Updated upstream
+
 function objectMapper(body) {
 	const articles = body.articles;
     var attachments = [];
 
     articles.forEach(function(element) {
-        const attachment = 
+        const attachment =
         {
             "fallback": "CNN News",
             "color": "#36a64f",
@@ -68,13 +68,12 @@ function objectMapper(body) {
 
     return {"attachments": attachments}
 }
-<<<<<<< HEAD
+
 
 module.exports = objectMapper;
-=======
+
 }
->>>>>>> ba9341644cce87497e5e62db5136e4f8236fd775
-=======
+
 // function objectMapper(body) {
 //
 // 	const articles = body.articles;
@@ -108,4 +107,3 @@ module.exports = objectMapper;
 //     ]
 // }
 // }
->>>>>>> Stashed changes
