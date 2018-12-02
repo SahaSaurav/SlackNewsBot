@@ -13,12 +13,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // GET page for heroku hosting, schedule rone job on open
 app.get('/', function (req, res) {
     // Cron Job config
-    const job = new CronJob('* * * * *', function () {
+    const job = new CronJob('* 9 * * *', function () {
         main.main();
     });
     job.start();
-
-    res.send('hello world');
+    res.send('news-bot-app');
 })
 
 // Run server
