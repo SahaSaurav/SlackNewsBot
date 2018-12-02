@@ -13,14 +13,12 @@ app.use(routes);
 // required for body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 
-// Slack access token, Channel ID
+// Slack configuration
 const token = process.env.SLACK_TOKEN;
 const web = new WebClient(token);
-
-
 const channelID = process.env.CHANNEL_ID;
 
-// See: https://api.slack.com/methods/chat.postMessage
+// Send Message
 web.chat.postMessage({ channel: channelID, text: 'Hello there' })
   .then((res) => {
     // `res` contains information about the posted message
