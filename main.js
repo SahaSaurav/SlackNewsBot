@@ -25,4 +25,4 @@ async function main() {
     .catch(console.error);
 }
 
-main();
+module.exports= {main}
