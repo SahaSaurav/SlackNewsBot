@@ -26,6 +26,29 @@ web.chat.postMessage({ channel: channelID, text: 'Hello there' })
   })
   .catch(console.error);
 
+// Send Message with attachment
+web.chat.postMessage({
+  channel: channelID,
+  text: 'BREAKING NEWS :partyparrot',
+  attachments: [
+    {
+      "fallback": "News Story",
+      "color": "#36a64f",
+      "author_name": "Bobby Tables",
+      "title": "News Story",
+      "title_link": "https://api.slack.com/",
+      "text": "Optional text that appears within the attachment",
+      "footer": "Slack API", 
+      "ts": 123456789
+    }
+  ]
+})
+  .then((res) => {
+    // `res` contains information about the posted message
+    console.log('Message sent: ', res.ts);
+  })
+  .catch(console.error);
+
 // Run server
 app.listen(process.env.PORT || port, function() {
     console.log('The magic happens on port ' + port);
