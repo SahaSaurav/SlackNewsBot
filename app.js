@@ -18,6 +18,11 @@ const job = new CronJob('0 9 * * *', function() {
 console.log('After job instantiation');
 job.start();
 
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', function (req, res) {
+    res.send('hello world')
+  })
+
 // Run server
 app.listen(process.env.PORT || port, function() {
     console.log('The magic happens on port ' + port);
