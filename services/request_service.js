@@ -1,7 +1,6 @@
 require('dotenv').config()
 const express = require('express');
 const request = require('request');
-const objectMapper = require('objectMapper')
 require('dotenv').config()
 const apiKey = process.env.NEWS_API_KEY;
 
