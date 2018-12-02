@@ -4,12 +4,9 @@ const port    	        = process.env.PORT || 8080;
 const request 			= require('request');
 const morgan            = require('morgan');
 const bodyParser       	= require('body-parser');
-const routes            = require('./routes/request_routes');
+const requestNews       = require('./services/request_service');
 const { WebClient }     = require('@slack/client');
 require('dotenv').config()
-
-// Routes
-app.use(routes);
 
 // required for body-parser
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,7 +15,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 const token = process.env.SLACK_TOKEN;
 const web = new WebClient(token);
 const channelID = process.env.CHANNEL_ID;
-const apiKey = process.env.API_KEY
 
 // Send Message
 web.chat.postMessage({ channel: channelID, text: 'Hello there' })
@@ -40,7 +36,7 @@ web.chat.postMessage({
       "title": "News Story",
       "title_link": "https://api.slack.com/",
       "text": "Optional text that appears within the attachment",
-      "footer": "Slack API", 
+      "footer": "Slack API",
       "ts": 123456789
     }
   ]
@@ -55,9 +51,3 @@ web.chat.postMessage({
 app.listen(process.env.PORT || port, function() {
     console.log('The magic happens on port ' + port);
 });
-
-request("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey, {json: true}, 
-	(err, res, body) => {
-		if (err) {console.log(err); }
-		console.log(body);
-	} )
