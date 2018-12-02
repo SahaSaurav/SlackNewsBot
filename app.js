@@ -3,7 +3,6 @@ const app      		    = express();
 const port    	        = process.env.PORT || 8080;
 const morgan            = require('morgan');
 const bodyParser       	= require('body-parser');
-const { WebClient }     = require('@slack/client');
 const CronJob           = require('cron').CronJob;
 require('dotenv').config()
 
